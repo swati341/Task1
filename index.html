@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>Task 1  </title>
+</head>
+<body>
+<center>
+<h1>Temperature Convertor </h1>
+<input type="text" id="fahrenheit" placeholder="Fahrenheit" name="f" value="" />
+
+<input type="text" id="celsius" placeholder="Celsius" name="c" value="" />
+<br>
+<button id="convert">Convert!</button> 
+<button id="clear">Reset</button>
+
+<script type="text/javascript">
+ document.getElementById('convert').onclick = tempConvert;
+document.getElementById('clear').onclick = clearForm;
+
+function tempConvert() {
+    
+    var fahrenheit = document.getElementById("fahrenheit").value;
+    var celsius = document.getElementById("celsius").value;
+  
+  if (fahrenheit != '') {
+        celsius = (parseFloat(fahrenheit) - 32) / 1.8;
+    } else {
+        fahrenheit = (parseFloat(celsius) * 1.8) + 32;
+    }
+  
+
+
+    document.getElementById('fahrenheit').value = parseFloat(fahrenheit).toFixed(1);
+    document.getElementById('celsius').value = parseFloat(celsius).toFixed(1);
+}
+
+
+function clearForm() {
+    document.getElementById('fahrenheit').value = '';
+    document.getElementById('celsius').value = '';
+} 
+
+</script>
+<style>
+body{
+    background-color:black;
+}
+#convert {
+  background-color: lightblue;
+}
+
+#clear{
+    background-color:yellow;
+}
+
+
+h1 {
+  
+  color: limegreen;
+}
+input {
+  display: block;
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 2em;
+  color: orange;
+ 
+}
+
+button {
+  padding: 10px;
+  font-size: 1.2em;
+  color: black;
+}
+</style>
+</center>
+</body>
+</html>
